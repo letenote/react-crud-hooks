@@ -89,6 +89,10 @@ nav a.active {
   text-align: left;
 }
 
+.contact-form {
+  text-align: left;
+}
+
 .contact-name {
   font-weight: bolder;
   margin-bottom: 3px;
@@ -102,7 +106,7 @@ nav a.active {
   margin: 5px;
 }
 
-.form-control {
+.control-input {
   display: inline;
   width: 100%;
   padding: 8px;
