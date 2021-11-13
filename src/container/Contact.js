@@ -1,8 +1,9 @@
 import React from "react";
+import ContactList from '../components/ContactList';
 
 const Contact = () => {
   return (
-    <>Contact Home</>
+    <ContactList />
   )
 }
 
