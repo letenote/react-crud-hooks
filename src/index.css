@@ -39,6 +39,14 @@ nav {
   background-color: mediumslateblue;
 }
 
+.btn-default {
+  background-color: yellowgreen;
+}
+
+.btn-warning {
+  background-color: sandybrown;
+}
+
 .btn-danger {
   background-color: crimson;
 }
@@ -72,12 +80,13 @@ nav a.active {
   padding: 7px 10px;
   border-radius: 4px;
   margin-bottom: 10px;
-  background-color: #fff3f3;
+  background-color: #f3f3f3;
   border: 1px solid #e5e5e5;
   box-shadow: 0 1px 2px 1px rgb(0 0 0 / 6%);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-align: left;
 }
 
 .contact-name {
