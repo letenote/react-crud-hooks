@@ -1,3 +1,0 @@
-export const SET_CONTACTS = 'SET_CONTACTS';
-export const SET_LOADING  = 'SET_LOADING';
-export const SET_CONTACTS_TO_DEFAULT = 'SET_CONTACTS_TO_DEFAULT';
