@@ -27,16 +27,10 @@ export const menu = [
         lazyComponent: React.lazy(() => import('../container/Create'))
       },
       {
-        path: "/contact/update",
+        path: "/contact/update/:id",
         exact: true,
         type: "single",
         lazyComponent: React.lazy(() => import('../container/Create'))
-      },
-      {
-        path: "/contact/:id",
-        exact: true,
-        type: "single",
-        lazyComponent: React.lazy(() => import('../container/Detail'))
       }
     ]
   }
