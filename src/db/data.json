@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "id": "1",
+      "name": "Uzumaki Naruto",
+      "number": "085388390814"
+    },
+    {
+      "id": "2",
+      "name": "Uchiha Sasuke",
+      "number": "081788390344"
+    },
+    {
+      "id": "3",
+      "name": "Haruno Sakura",
+      "number": "082588390215"
+    },
+    {
+      "name": "Nico Rodin",
+      "number": "234234234234",
+      "id": "4"
+    },
+    {
+      "name": "Takin",
+      "number": "24234234",
+      "id": "5"
+    },
+    {
+      "name": "Nami",
+      "number": "234234234",
+      "id": "6"
+    }
+  ]
+}
