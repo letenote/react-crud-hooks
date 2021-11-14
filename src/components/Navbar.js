@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router';
 
 const Navbar = () => {
@@ -8,8 +8,8 @@ const Navbar = () => {
     <nav style={{ marginBottom: 20 }}>
       <h1 className="logo-text" onClick={() => history.push('/')}>Contact List</h1>
       <div className="nav-menu">
-        <Link to="/contact">Home</Link>
-        <Link to="/contact/create">Create</Link>
+        <NavLink exact activeClassName={'active'} to="/contact">Home</NavLink>
+        <NavLink activeClassName={'active'} to="/contact/create">Create</NavLink>
       </div>
     </nav>
   )

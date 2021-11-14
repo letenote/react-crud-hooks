@@ -1,7 +1,12 @@
 import React from "react";
 
 const ContactList = (props) => {
-  const { contactList = [] } = props;
+  const { loading = true, contactList = [] } = props;
+
+  if( loading ){
+    return <div style={{ textAlign: 'center' }}>Loading..</div>
+  }
+
   return contactList.length === 0
     ? <div style={{ textAlign: 'center' }}>No Contact List</div>
     : contactList.map(( contact, contactIndex ) => {
