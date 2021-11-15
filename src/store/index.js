@@ -1,12 +1,12 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
-import { logger } from "./middleware";
+import { access, logger } from "./middleware";
 import contactReducer from "./redux/contact/contact.reducer";
 
 const rootReducer = combineReducers({
   contact: contactReducer,
 });
-const middleware = [thunk, logger];
+const middleware = [access, thunk, logger];
 const composeEnhanchers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   rootReducer,

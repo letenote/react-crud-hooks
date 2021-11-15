@@ -6,6 +6,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `fake api server`
+
+Runs the app in terminal "npm run fake-server"\
+Open [http://localhost:2999](http://localhost:2999) to view it in the browser.
+| Method | Endpoint | Action |
+| ------ | ------ | ------ |
+| GET | /contacts | get all contacts |
+| GET | /contacts/:id | get single contact |
+| POST | /contacts | add new contact |
+| PUT | /contacts/:id | update a contact |
+| DELETE | /contacts/:id | delete a contact |
+
 ### `yarn start`
 
 Runs the app in the development mode.\
