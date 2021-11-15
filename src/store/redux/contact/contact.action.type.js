@@ -1,5 +1,6 @@
-export const SET_CONTACTS = 'SET_CONTACTS';
-export const SET_LOADING = 'SET_LOADING';
-export const REMOVE_CONTACT = 'REMOVE_CONTACT';
-export const ADD_CONTACT = 'ADD_CONTACT';
-export const UPDATE_CONTACT = 'UPDATE_CONTACT';
+export const SET_CONTACTS = "SET_CONTACTS";
+export const SET_LOADING = "SET_LOADING";
+export const REMOVE_CONTACT = "REMOVE_CONTACT";
+export const ADD_CONTACT = "ADD_CONTACT";
+export const UPDATE_CONTACT = "UPDATE_CONTACT";
+export const UNMOUNT_CONTACTS = "UNMOUNT_CONTACTS";

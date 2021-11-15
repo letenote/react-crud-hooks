@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router";
+import { errorHandler } from "../lib";
+import Service from "../service";
 import {
   addContact,
   updateContact,
@@ -10,10 +12,8 @@ const Create = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-  const {
-    contact: { data },
-  } = useSelector((state) => state);
   const [_isUpdate, _setIsUpdate] = useState(false);
+  const [_contactId, _setContactId] = useState("");
   const [_form, _setForm] = useState({
     name: "",
     number: "",
@@ -27,20 +27,23 @@ const Create = (props) => {
     if (path === "/contact/create") return;
     try {
       if (id) {
-        let getContact = data.filter((item) => item.id === id);
-        _setForm({
-          id: getContact[0].id,
-          name: getContact[0].name,
-          number: getContact[0].number,
-          desc: getContact[0].desc,
-        });
-        _setIsUpdate(true);
-      }
+        Service.getContact(id)
+          .then((res) => {
+            _setForm({
+              name: res["data"]["name"],
+              number: res["data"]["number"],
+              desc: res["data"]["desc"],
+            });
+            return res["data"]["id"];
+          })
+          .then((id) => _setContactId(id))
+          .then(() => _setIsUpdate(true));
+      };
     } catch (error) {
-      console.error({ error, message: "data id not match" });
+      errorHandler(error);
       return history.goBack();
     }
-  }, [data, id, props, history]);
+  }, [id, props, history]);
 
   const handleChange = (field, value) => {
     return _setForm({
@@ -51,15 +54,12 @@ const Create = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let getForm = _form;
-    getForm['id'] = `${data.length + 1}`;
-
-    await addContact(getForm, dispatch).then(() => history.goBack());
+    await addContact(_form, dispatch).then(() => history.goBack());
   };
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    await updateContact(_form, dispatch).then(() => history.goBack());
+    await updateContact(_contactId, _form, dispatch).then(() => history.goBack());
   };
 
   return (

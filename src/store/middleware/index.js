@@ -1,5 +1,3 @@
 import { logger } from "./logger";
-
-export {
-  logger
-}
+import { access } from "./access";
+export { logger, access };
