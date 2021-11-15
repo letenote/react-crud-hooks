@@ -40,7 +40,7 @@ const Create = (props) => {
       console.error({ error, message: "data id not match" });
       return history.goBack();
     }
-  }, [id, props, history]);
+  }, [data, id, props, history]);
 
   const handleChange = (field, value) => {
     return _setForm({
@@ -52,7 +52,7 @@ const Create = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let getForm = _form;
-    getForm.id = `${data.length + 1}`;
+    getForm['id'] = `${data.length + 1}`;
 
     await addContact(getForm, dispatch).then(() => history.goBack());
   };
